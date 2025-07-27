@@ -31,4 +31,8 @@ public class SlotAllocationService {
         slotRepository.save(slot);
         System.out.println("Slot is free : " + slot.getSlotCode());
     }
+
+    public Slot getNextAvailableSlot() {
+        return slotRepository.findFirstByAvailableTrue().orElseThrow(() -> new RuntimeException("No slots available!"));
+    }
 }

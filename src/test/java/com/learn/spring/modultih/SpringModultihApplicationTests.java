@@ -9,7 +9,7 @@ import org.springframework.modulith.docs.Documenter;
 class SpringModultihApplicationTests {
 
 	@Test
-	void contextLoads() {
+	void validateModularity() {
         ApplicationModules modules = ApplicationModules.of(SpringModultihApplication.class).verify();
         new Documenter(modules).writeDocumentation();
     }

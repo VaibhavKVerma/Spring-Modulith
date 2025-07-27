@@ -22,6 +22,5 @@ public class ExitService {
         entry.setActive(false);
         parkingEntryRepository.save(entry);
         eventPublisher.publishEvent(new VehicleExitedEvent(vehicleNumber, entry.getExitTime()));
-
     }
 }
